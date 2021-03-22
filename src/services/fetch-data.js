@@ -1,11 +1,11 @@
-import ITEMS from '../mocks/list1';
+import FILMS from '../mocks/list1';
 
 function getList(listId) {
-    return ITEMS;
+    return FILMS;
 }
 
 function getItem(itemId) {
-    return ITEMS.filter( i => i.id === itemId)[0];
+    return FILMS.filter( i => i.id === itemId)[0];
 }
 
 export default getList;

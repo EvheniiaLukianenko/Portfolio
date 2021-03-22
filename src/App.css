@@ -15,6 +15,10 @@
 }
 
 .App {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
   text-align: center;
 }
 
@@ -88,13 +92,73 @@
   margin-bottom: 20px;
 }
 
+/* List */
+
+.list__item {
+  border-bottom: 2px solid transparent;
+}
+
+.list__item:hover {
+  cursor: pointer;
+  background-color: var(--first) !important;
+  border-bottom: 2px solid var(--dark);
+}
+
+/* Profile */
+.profile {
+  display: none;
+  background-color: var(--violet);
+  border: 3px solid var(--rose);
+}
+
+.profile.active {
+  display: block;
+}
+
+.profile h2{
+  padding: 10px 0;
+}
+
+.profile__img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.profile__info {
+  padding: 10px;
+  
+}
+
+.profile__info h5 {
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 20px;
+  font-family: var(--ubuntu);
+  font-weight: 500;
+}
+
+.profile__rate {
+  font-size: 22px;
+}
+
+.profile__rate i {
+  display: inline-block;
+  margin-right: 5px;
+  color: var(--rose);
+}
+
+.profile__rate span {
+  font-size: 16px;
+}
+
 /* Footer */
 
 .footer {
-  position: fixed;
+  /* position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 1;
+  z-index: 1; */
 
   width: 100%;
   padding: 15px 0;
