@@ -1,3 +1,129 @@
+/* Variables */
+:root {
+  --first: #b6f8f8;
+  --second: #f4f5a1;
+  --dark: #312f30;
+  --rose: #f58783;
+  --white: #fff;
+  --violet: #c8defd;
+
+  --ubuntu: 'Ubuntu', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+}
+
+/* Header */
+.header {
+  padding: 15px 0;
+
+  background-color: var(--first);
+  color: var(--dark);
+}
+
+.header__logo {
+  text-align: left;
+}
+
+.header__logo span {
+  font-size: 36px;
+  font-family: var(--ubuntu);
+  font-weight: 700;
+}
+
+.header__logo h2 {
+  color: var(--rose);
+  font-size: 42px;
+  font-weight: 900;
+}
+
+/* Button */
+
+.button {
+  display: block;
+  padding: 10px;
+
+  border: 3px solid var(--white);
+  background-color: var(--rose);
+
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+
+  transition: border-color .2s linear,
+              color .2s linear;
+}
+
+.button:hover {
+  text-decoration: none;
+  color: inherit;
+  border-color: var(--dark);
+}
+
+.button--violet {
+  background-color: var(--violet);
+  border-color: var(--dark);
+  color: var(--dark);
+
+  transition: background-color .2s linear;
+}
+
+.button--violet:hover {
+  background-color: var(--dark);
+  color: var(--violet);
+}
+
+/* Main part */
+
+.main-part {
+  padding: 50px 0;
+}
+
+.list-buttons {
+  margin-bottom: 20px;
+}
+
+/* Footer */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  padding: 15px 0;
+  background-color: var(--second);
+
+  text-align-last: left;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Contact */
+.contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact a {
+  display: inline-block;
+  margin: 0 5px;
+
+  font-size: 16px;
+  color: var(--dark);
+  border-bottom: 2px solid var(--second);
+
+  transition: border-color .2s linear;
+}
+
+.contact a:hover {
+  text-decoration: none;
+  color: var(--dark);
+  border-bottom: 2px solid var(--rose);
 }
