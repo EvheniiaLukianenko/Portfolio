@@ -1,11 +1,17 @@
-import ITEMS from '../mocks/list1';
+import FILMS from '../mocks/list1';
+import BOOKS from '../mocks/list2';
 
 function getList(listId) {
-    return ITEMS;
+    if (listId === 1){
+        return FILMS;
+    } else if (listId === 2) {
+        return BOOKS;
+    }
+    
 }
 
 function getItem(itemId) {
-    return ITEMS.filter( i => i.id === itemId)[0];
+    return FILMS.filter( i => i.id === itemId)[0];
 }
 
 export default getList;
