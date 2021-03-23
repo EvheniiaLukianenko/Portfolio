@@ -1,9 +1,9 @@
-const FILMS = [
+export const FILMS = [
     {
         id: 1,
         title: 'Harry Potter and the Half-Blood Prince',
         description: "As Harry Potter begins his sixth year at Hogwarts, he discovers an old book marked as 'the property of the Half-Blood Prince' and begins to learn more about Lord Voldemort's dark past.",
-        image: 'images/harry-potter.jpg',
+        image: 'harry-potter.jpg',
         genre: 'Action, Adventure, Family',
         status: 1,
         imdb: 7.6,
@@ -12,7 +12,7 @@ const FILMS = [
         id: 2,
         title: 'Inception',
         description: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
-        image: 'images/inception.jpg',
+        image: 'inception.jpg',
         genre: ' Action, Adventure, Sci-Fi',
         status: 1,
         imdb: 8.8,
@@ -21,7 +21,7 @@ const FILMS = [
         id: 3,
         title: 'The Great Gatsby',
         description: 'A writer and wall street trader, Nick, finds himself drawn to the past and lifestyle of his millionaire neighbor, Jay Gatsby.',
-        image: 'images/great-gatsby.jpg',
+        image: 'great-gatsby.jpg',
         genre: 'Drama, Romance',
         status: 1,
         imdb: 7.2,
@@ -30,7 +30,7 @@ const FILMS = [
         id: 4,
         title: 'The Hobbit: An Unexpected Journey',
         description: 'A reluctant Hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home, and the gold within it from the dragon Smaug.',
-        image: 'images/hobbit.jpg',
+        image: 'hobbit.jpg',
         genre: ' Adventure, Fantasy',
         status: 1,
         imdb: 7.8,
@@ -100,4 +100,12 @@ const FILMS = [
     }
 ];
 
-export default FILMS;
+export const BOOKS = [
+    {title: 'nnn'}
+    ];
+
+export const LISTS = [
+    {id: 1, title: 'Movies', data: FILMS},
+    {id: 1, title: 'Books',data: BOOKS},
+]
+

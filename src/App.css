@@ -111,7 +111,7 @@
 
 /* Profile */
 .profile {
-  display: none;
+  /*display: none;*/
   background-color: var(--violet);
   border: 3px solid var(--rose);
 }
