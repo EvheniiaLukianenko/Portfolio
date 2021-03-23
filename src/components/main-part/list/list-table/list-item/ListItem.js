@@ -9,7 +9,8 @@ export default class ListItem extends Component {
     }
 
     // Check!!!
-    handleClick() {
+    handleClick(e) {
+        e.preventDefault();
         this.setState(state => ({
             isToggleOn: !state.isToggleOn
         }));

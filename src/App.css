@@ -50,6 +50,7 @@
 
 .button {
   display: block;
+  min-width: 150px;
   padding: 10px;
 
   border: 3px solid var(--white);
@@ -75,6 +76,10 @@
   color: var(--dark);
 
   transition: background-color .2s linear;
+}
+
+.button--nobd {
+  border: none;
 }
 
 .button--violet:hover {
@@ -120,6 +125,7 @@
 }
 
 .profile__img {
+  display: block;
   max-width: 100%;
   width: 100%;
   height: auto;
@@ -177,7 +183,7 @@
 
 .contact a {
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 8px;
 
   font-size: 16px;
   color: var(--dark);
@@ -190,4 +196,120 @@
   text-decoration: none;
   color: var(--dark);
   border-bottom: 2px solid var(--rose);
+}
+
+/* Modal */
+.modal {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(49, 47, 48, .3);
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal__window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1050;
+
+  transform: translate(-50%, -50%);
+
+  max-width: 450px;
+  width: 100%;
+  padding: 25px;
+
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.modal__header {
+  color: var(--rose);
+}
+
+.modal__form {
+  min-width: 100%;
+}
+
+.modal__control {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+
+  border: 1px solid var(--dark);
+  outline: none;
+  overflow: hidden;
+
+  line-height: 1.4;
+  font-size: 16px;
+  color: var(--dark);
+}
+
+textarea.modal__control {
+  min-height: 150px;
+}
+
+.modal__contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__close {
+  position: fixed;
+  top: 0px;
+  right: -25px;
+
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+
+  font-size: 0;
+  color: transparent;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.modal__close:before,
+.modal__close:after {
+  display: block;
+  content: '';
+
+  position: absolute;
+  top: 11px;
+  left: 2px;
+  z-index: 1050;
+
+  width: 20px;
+  height: 3px;
+  background-color: var(--dark);
+
+  transition-duration: .5s;
+}
+
+.modal__close:before {
+  transform: rotate(45deg);
+}
+
+.modal__close:after {
+  transform: rotate(-45deg);
+}
+
+.modal__close:hover.modal__close:before{
+  transform: rotate(135deg);
+}
+
+.modal__close:hover.modal__close:after{
+  transform: rotate(45deg);
 }

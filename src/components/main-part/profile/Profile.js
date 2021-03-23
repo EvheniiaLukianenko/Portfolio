@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import nobody from '../../../images/nobody.jpg'
+import nobody from '../../../images/films/nobody.jpg'
 
 export default class Profile extends Component {
     render() {

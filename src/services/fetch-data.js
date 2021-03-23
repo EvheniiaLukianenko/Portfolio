@@ -1,7 +1,13 @@
 import FILMS from '../mocks/list1';
+import BOOKS from '../mocks/list2';
 
 function getList(listId) {
-    return FILMS;
+    if (listId === 1){
+        return FILMS;
+    } else if (listId === 2) {
+        return BOOKS;
+    }
+    
 }
 
 function getItem(itemId) {
