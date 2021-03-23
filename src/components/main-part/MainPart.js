@@ -7,8 +7,8 @@ export default class MainPart extends Component {
         return (
             <div className="main-part container">
                 <div className="row align-items-center">
-                    <div className="col"><List/></div>
-                    <div className="col"><Profile/></div>
+                    <div className="col-6"><List/></div>
+                    <div className="col-6"><Profile/></div>
                 </div>
             </div>
         )

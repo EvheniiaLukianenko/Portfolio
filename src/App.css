@@ -15,6 +15,10 @@
 }
 
 .App {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
   text-align: center;
 }
 
@@ -46,6 +50,7 @@
 
 .button {
   display: block;
+  min-width: 150px;
   padding: 10px;
 
   border: 3px solid var(--white);
@@ -73,6 +78,10 @@
   transition: background-color .2s linear;
 }
 
+.button--nobd {
+  border: none;
+}
+
 .button--violet:hover {
   background-color: var(--dark);
   color: var(--violet);
@@ -88,13 +97,74 @@
   margin-bottom: 20px;
 }
 
+/* List */
+
+.list__item {
+  border-bottom: 2px solid transparent;
+}
+
+.list__item:hover {
+  cursor: pointer;
+  background-color: var(--first) !important;
+  border-bottom: 2px solid var(--dark);
+}
+
+/* Profile */
+.profile {
+  display: none;
+  background-color: var(--violet);
+  border: 3px solid var(--rose);
+}
+
+.profile.active {
+  display: block;
+}
+
+.profile h2{
+  padding: 10px 0;
+}
+
+.profile__img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.profile__info {
+  padding: 10px;
+  
+}
+
+.profile__info h5 {
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 20px;
+  font-family: var(--ubuntu);
+  font-weight: 500;
+}
+
+.profile__rate {
+  font-size: 22px;
+}
+
+.profile__rate i {
+  display: inline-block;
+  margin-right: 5px;
+  color: var(--rose);
+}
+
+.profile__rate span {
+  font-size: 16px;
+}
+
 /* Footer */
 
 .footer {
-  position: fixed;
+  /* position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 1;
+  z-index: 1; */
 
   width: 100%;
   padding: 15px 0;
@@ -113,7 +183,7 @@
 
 .contact a {
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 8px;
 
   font-size: 16px;
   color: var(--dark);
@@ -126,4 +196,120 @@
   text-decoration: none;
   color: var(--dark);
   border-bottom: 2px solid var(--rose);
+}
+
+/* Modal */
+.modal {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(49, 47, 48, .3);
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal__window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1050;
+
+  transform: translate(-50%, -50%);
+
+  max-width: 450px;
+  width: 100%;
+  padding: 25px;
+
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.modal__header {
+  color: var(--rose);
+}
+
+.modal__form {
+  min-width: 100%;
+}
+
+.modal__control {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+
+  border: 1px solid var(--dark);
+  outline: none;
+  overflow: hidden;
+
+  line-height: 1.4;
+  font-size: 16px;
+  color: var(--dark);
+}
+
+textarea.modal__control {
+  min-height: 150px;
+}
+
+.modal__contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__close {
+  position: fixed;
+  top: 0px;
+  right: -25px;
+
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+
+  font-size: 0;
+  color: transparent;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.modal__close:before,
+.modal__close:after {
+  display: block;
+  content: '';
+
+  position: absolute;
+  top: 11px;
+  left: 2px;
+  z-index: 1050;
+
+  width: 20px;
+  height: 3px;
+  background-color: var(--dark);
+
+  transition-duration: .5s;
+}
+
+.modal__close:before {
+  transform: rotate(45deg);
+}
+
+.modal__close:after {
+  transform: rotate(-45deg);
+}
+
+.modal__close:hover.modal__close:before{
+  transform: rotate(135deg);
+}
+
+.modal__close:hover.modal__close:after{
+  transform: rotate(45deg);
 }
