@@ -1,21 +1,32 @@
 import React, { Component } from 'react'
-import nobody from '../../../images/films/nobody.jpg'
+import {store} from "../../../index";
 
 export default class Profile extends Component {
+    item;
+    getItem() {
+        this.item = store.getState().item;
+    }
+    // imagePath = '../../../assets/images/' + this.item?.image;
+    imagePath = '../../../assets/images/' + 'hobbit.jpg';
+
     render() {
+        this.getItem();
         return (
-            <div className="profile" id="profile">
-                <h2>Mr. Nobody</h2>
-                <img className="profile__img" src={nobody}/>
-                <div className="profile__info row justify-content-between align-items-center">
-                    <h5 className="col">Drama, Fantasy, Romance</h5>
-                    <div className="profile__rate col-3">
-                        <i class="fas fa-star"></i>
-                        7.8
-                        <span>/10</span>
+            this.item.image ?
+                (<div className="profile" id="profile">
+                    <h2>{this.item.title}</h2>
+                    <img className="profile__img" alt={this.item.image} src={require(this.imagePath)}/>
+                    <div className="profile__info row justify-content-between align-items-center">
+                        <h5 className="col">{this.item.genre}</h5>
+                        <div className="profile__rate col-3">
+                            <i className="fas fa-star"></i>
+                            {this.item.imdb}
+                            <span>/10</span>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div>)
+                :
+                (<div className="profile" id="profile">No item found</div>)
         )
     }
 }

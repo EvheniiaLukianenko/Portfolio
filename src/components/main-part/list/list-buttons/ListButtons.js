@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import ListButton from './list-button/ListButton';
+import {LISTS} from "../../../../mocks/lists";
 
 export default class ListButtons extends Component {
+    lists = LISTS.map((item, index) =>
+        <div className="col-3">
+            <ListButton listData={item}  key={item.id}/>
+        </div>
+    );
+
     render() {
         return (
             <div className="list-buttons row justify-content-center">
-                <div className="col-3">
-                    <ListButton/>
-                </div>
-                <div className="col-3">
-                    <ListButton/>
-                </div>
+                {/*<div className="col-3">*/}
+                {/*    <ListButton listData={}/>*/}
+                {/*</div>*/}
+                {/*<div className="col-3">*/}
+                {/*    <ListButton/>*/}
+                {/*</div>*/}
+                {this.lists}
+
             </div>
         )
     }

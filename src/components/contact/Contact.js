@@ -5,15 +5,15 @@ export default class Contact extends Component {
         return (
             <div className="contact">
                 <a href="https://www.linkedin.com/in/yevheniia-lukianenko/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
+                    <i className="fab fa-linkedin"></i>
                     LinkedIn
                 </a>
                 <a href="mailto:zeffir54@gmail.com">
-                    <i class="far fa-envelope"></i>
+                    <i className="far fa-envelope"></i>
                     Email
                 </a>
                 <a href="https://github.com/EvheniiaLukianenko" target="_blank">
-                    <i class="fab fa-github"></i>
+                    <i className="fab fa-github"></i>
                     GitHub
                 </a>
             </div>

@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
 import ListItem from './list-item/ListItem';
-import getList from '../../../../services/fetch-data';
+import {store} from "../../../../index";
+import {actions} from "../../../../store/actions/actions";
 
 export default class ListTable extends Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     data: [{
-        //         title: "Bla"
-        //     }]
-        // };
-
-        // this.getListData = this.getListData.bind(this);
+        store.dispatch({type: actions.FETCH_LIST});
     }
 
-    // getListData() {
-    //     return getList(1);
-    // }
 
-    listItems = getList(1).map((item, index) =>
-        <ListItem item={item} index={index}></ListItem>
+    getListData() {
+        return store.getState().listData;
+    }
+
+    listItems = this.getListData().data.map((item, index) =>
+        <ListItem item={item} index={index}  key={item.id}></ListItem>
     );
 
     render() {
         
         return (
-            <table class="table table-light table-striped table-bordered">
+            <table className="table table-light table-striped table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
