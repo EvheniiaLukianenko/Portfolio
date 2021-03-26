@@ -11,9 +11,7 @@ export default class ListTable extends Component {
 
 
     getListData() {
-        // return getListData(1, 1);
         return store.getState().listData;
-
     }
 
     listItems = this.getListData().data.map((item, index) =>

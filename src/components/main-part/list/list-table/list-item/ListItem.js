@@ -13,14 +13,6 @@ export default class ListItem extends Component {
     }
 
     // Check!!!
-<<<<<<< HEAD
-    handleClick(e) {
-        e.preventDefault();
-        this.setState(state => ({
-            isToggleOn: !state.isToggleOn
-        }));
-        document.getElementById('profile').classList.toggle('active');
-=======
     handleClick() {
         // this.setState(state => ({
         //     isToggleOn: !state.isToggleOn
@@ -37,7 +29,6 @@ export default class ListItem extends Component {
     closeItem() {
         store.dispatch({type: actions.CLOSE_ITEM});
         // this.props.history.push(`/${2}/notes/${1}`);
->>>>>>> a314b2fec1db587fca1e489b15fef15cf5fd9d60
     }
 
     render() {

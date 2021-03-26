@@ -3,13 +3,9 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
+
 import reportWebVitals from './reportWebVitals';
-<<<<<<< HEAD
-=======
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux'
-
-
 import combineReducers from './store/reducers'
 import rootSaga from './store/side-effects/rootSaga'
 import { createStore, applyMiddleware, compose } from 'redux'
@@ -23,7 +19,6 @@ export const store = createStore(
     compose(applyMiddleware(sagaMiddleware)));
 
 sagaMiddleware.run(rootSaga);
->>>>>>> a314b2fec1db587fca1e489b15fef15cf5fd9d60
 
 ReactDOM.render(
   <React.StrictMode>

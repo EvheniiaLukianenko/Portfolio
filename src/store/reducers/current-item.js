@@ -1,6 +1,14 @@
 import {actions} from '../actions/actions';
 
-const initialState = {title: '', description: '',  id: 0, errorText: ''};
+const initialState = {
+    id: 0,
+    title: '',
+    description: "",
+    image: '',
+    genre: '',
+    status: 0,
+    imdb: 0,
+};
 
 function itemReducer(state = initialState, action) {
     switch(action.type) {

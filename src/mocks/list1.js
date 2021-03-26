@@ -99,13 +99,3 @@ export const FILMS = [
         imdb: 7.1,
     }
 ];
-
-export const BOOKS = [
-    {title: 'nnn'}
-    ];
-
-export const LISTS = [
-    {id: 1, title: 'Movies', data: FILMS},
-    {id: 1, title: 'Books',data: BOOKS},
-]
-

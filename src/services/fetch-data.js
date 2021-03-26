@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-import FILMS from '../mocks/list1';
-import BOOKS from '../mocks/list2';
-
-function getList(listId) {
-    if (listId === 1){
-        return FILMS;
-    } else if (listId === 2) {
-        return BOOKS;
-    }
-    
-=======
-import {LISTS} from '../mocks/list1';
+import {LISTS} from '../mocks/lists';
 
 export function getListData(listId = 1, pageNumber = 1, itemsPerPage = 3) {
     let listRequested = LISTS.filter(i => i.id === listId)[0];
@@ -28,7 +16,6 @@ export function getListData(listId = 1, pageNumber = 1, itemsPerPage = 3) {
         itemsTotal: itemsTotal,
         pagesTotal: pagesTotal,
     };
->>>>>>> a314b2fec1db587fca1e489b15fef15cf5fd9d60
 }
 
 export function getItem(listId, itemId) {

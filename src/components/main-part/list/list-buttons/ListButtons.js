@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ListButton from './list-button/ListButton';
-import {LISTS} from "../../../../mocks/list1";
+import {LISTS} from "../../../../mocks/lists";
 
 export default class ListButtons extends Component {
     lists = LISTS.map((item, index) =>

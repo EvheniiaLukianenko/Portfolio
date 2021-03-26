@@ -1,4 +1,4 @@
-const BOOKS = [
+export const BOOKS = [
     {
         id: 1,
         title: 'Lagom: The Swedish Art of Balanced Living',
@@ -88,5 +88,3 @@ const BOOKS = [
         status: 1,
     }
 ];
-
-export default BOOKS;

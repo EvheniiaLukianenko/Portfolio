@@ -2,9 +2,7 @@ import './App.css';
 import Header from './components/header/Header';
 import MainPart from './components/main-part/MainPart';
 import Footer from './components/footer/Footer';
-<<<<<<< HEAD
-import Modal from './components/modal/Modal';
-=======
+import Modal from './components/modal/Modal'
 import {connect} from 'react-redux';
 
 
@@ -14,7 +12,6 @@ const mapStateToProps = (state) => {
         item: state.item,
     }
 };
->>>>>>> a314b2fec1db587fca1e489b15fef15cf5fd9d60
 
 function App() {
   return (
