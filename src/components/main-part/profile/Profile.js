@@ -7,7 +7,7 @@ export default class Profile extends Component {
         this.item = store.getState().item;
     }
     // imagePath = '../../../assets/images/' + this.item?.image;
-    imagePath = '../../../assets/images/' + 'hobbit.jpg';
+    imagePath = '../../../assets/images/';
 
     render() {
         this.getItem();
@@ -15,7 +15,7 @@ export default class Profile extends Component {
             this.item.image ?
                 (<div className="profile" id="profile">
                     <h2>{this.item.title}</h2>
-                    <img className="profile__img" alt={this.item.image} src={require(this.imagePath)}/>
+                    <img className="profile__img" alt={this.item.image} src={require('../../../assets/images/' + this.item.image).default}/>
                     <div className="profile__info row justify-content-between align-items-center">
                         <h5 className="col">{this.item.genre}</h5>
                         <div className="profile__rate col-3">
@@ -26,7 +26,7 @@ export default class Profile extends Component {
                     </div>
                 </div>)
                 :
-                (<div className="profile" id="profile">No item found</div>)
+                (null)
         )
     }
 }

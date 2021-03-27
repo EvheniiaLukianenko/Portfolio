@@ -4,7 +4,7 @@ export const BOOKS = [
         title: 'Lagom: The Swedish Art of Balanced Living',
         author: 'Linnea Dunne',
         description: "Explains how to live 'lagom', or a balanced life, by cherishing relationships, improving work-life balance, freeing the home from clutter, and savoring good food. Lagom (pronounced 'lar-gom') has no equivalent in the English language but is loosely translated as 'not too little, not too much, just right'. ",
-        image: 'images/books/lagom.jpg',
+        image: 'lagom.jpg',
         status: 1,
     },
     {
@@ -12,7 +12,7 @@ export const BOOKS = [
         title: 'The Strager',
         author: 'Max Frei',
         description: "Max Frei, and the Labyrinth of Echo series, is a multi-million copy selling Russian literary sensation appearing in English for the first time in 2009. Intriguing, original, remarkable and wry ... THE STRANGER is a piece of absolute enchantment.",
-        image: 'images/books/maxfrei.jpg',
+        image: 'maxfrei.jpg',
         status: 1,
     },
     {
@@ -20,7 +20,7 @@ export const BOOKS = [
         title: "Harry Potter and the Philosopher's Stone",
         author: 'J. K. Rowling',
         description: "Celebrate 20 years of Harry Potter magic with four special editions of Harry Potter and the Philosopher's Stone. Gryffindor, Slytherin, Hufflepuff, Ravenclaw ... Twenty years ago these magical words and many more flowed from a young writer's pen, an orphan called Harry Potter was freed from the cupboard under the stairs - and a global phenomenon started.",
-        image: 'images/books/harrypotter.jpg',
+        image: 'harrypotter.jpg',
         status: 1,
     },
     {
@@ -28,7 +28,7 @@ export const BOOKS = [
         title: 'Alice in Wonderland',
         author: 'Lewis Caroll',
         description: "Lewis Carroll's Alice has been enchanting children for 150 years. Curious Alice, the bossy White Rabbit, the formidable Queen of Hearts and the Mad Hatter are among the best-loved, most iconic literary creations of all time.",
-        image: 'images/books/alice.jpg',
+        image: 'alice.jpg',
         status: 1,
     },
     {
@@ -36,7 +36,7 @@ export const BOOKS = [
         title: 'The Little Prince',
         author: 'Antoine de Saint-Exupéry',
         description: "Meet the Little Prince, a young fellow who hails from a tiny, distant planet. He loves to watch sunsets and look after his flower, to ask questions and to laugh.",
-        image: 'images/books/little.jpg',
+        image: 'little.jpg',
         status: 1,
     },
     {
@@ -44,7 +44,7 @@ export const BOOKS = [
         title: 'The Plague',
         author: 'Albert Camus',
         description: "The townspeople of Oran are in the grip of a deadly plague, which condemns its victims to a swift and horrifying death. Fear, isolation and claustrophobia follow as they are forced into quarantine. ",
-        image: 'images/books/plague.jpeg',
+        image: 'plague.jpeg',
         status: 1,
     },
     {
@@ -52,7 +52,7 @@ export const BOOKS = [
         title: 'The Boy in the Striped Pajamas',
         author: 'John Boyne',
         description: "Bored and lonely after his family moves from Berlin to a place called 'Out-With' in 1942, Bruno, the son of a Nazi officer, befriends a boy in striped pajamas who lives behind a wire fence.",
-        image: 'images/books/theboy.jpg',
+        image: 'theboy.jpg',
         status: 1,
     },
     {
@@ -60,7 +60,7 @@ export const BOOKS = [
         title: 'The Hunters and the hunted',
         author: 'Ivan Bahriany',
         description: " I picked up a copy years ago in a garage sale for 50 cents and it proved to be an unexpected treasure. The author, Ivan Bahriany, was a Ukranian poet and intellectual who was sent to the GULAG in the 1930s and after his return managed to escape to Germany in the 1940s.",
-        image: 'images/books/tigers.jpg',
+        image: 'tigers.jpg',
         status: 1,
     },
     {
@@ -68,7 +68,7 @@ export const BOOKS = [
         title: 'Crime and Punishment',
         author: 'Fyodor Dostoyevsky',
         description: "Raskolnikov, an impoverished student living in the St. Petersburg of the tsars, is determined to overreach his humanity and assert his untrammeled individual will. ",
-        image: 'images/books/crime.jpg',
+        image: 'crime.jpg',
         status: 1,
     },
     {
@@ -76,7 +76,7 @@ export const BOOKS = [
         title: 'Dead Souls',
         author: 'Nikolai Vasilevich Gogol',
         description: "A stranger arrives in a Russian backwater community with a bizarre proposition for the local landowners: cash for their 'dead souls', the serfs who have died in their service. Gogol's comic masterpiece offers a vast and satirical painting of 19th-century Russia.",
-        image: 'images/books/deadsouls.jpg',
+        image: 'deadsouls.jpg',
         status: 1,
     },
     {
@@ -84,7 +84,23 @@ export const BOOKS = [
         title: 'Robinson Crusoe',
         author: 'Daniel Defoe',
         description: "Fleeing from pirates, Robinson Crusoe is swept ashore in a storm possessing only a knife, a box of tobacco, a pipe-and the will to survive. His is the saga of a man alone- a man who overcomes self-pity and despair to reconstruct his life.",
-        image: 'images/books/robinson.jpg',
+        image: 'robinson.jpg',
+        status: 1,
+    },
+    {
+        id: 12,
+        title: 'Robinson Crusoe334',
+        author: 'Daniel Defoe',
+        description: "Fleeing frerfefrom pirates, Robinson Crusoe is swept ashore in a storm possessing only a knife, a box of tobacco, a pipe-and the will to survive. His is the saga of a man alone- a man who overcomes self-pity and despair to reconstruct his life.",
+        image: 'robinson.jpg',
+        status: 1,
+    },
+    {
+        id: 13,
+        title: 'Robinson Crusoe444',
+        author: 'Daniel Defoe',
+        description: "Fleeing from pirates, Robinson Crusoe is swept ashore in a storm possessing only a knife, a box of tobacco, a pipe-and the will to survive. His is the saga of a man alone- a man who overcomes self-pity and despair to reconstruct his life.",
+        image: 'robinson.jpg',
         status: 1,
     }
 ];

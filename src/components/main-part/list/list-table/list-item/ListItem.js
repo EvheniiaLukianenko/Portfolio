@@ -5,19 +5,14 @@ import {store} from "../../../../../index";
 export default class ListItem extends Component {
     constructor(props) {
         super(props);
-        this.state = {isToggleOn: true};
 
         this.handleClick = this.handleClick.bind(this);
         this.openItem = this.openItem.bind(this);
         this.closeItem = this.closeItem.bind(this);
     }
 
-    // Check!!!
+
     handleClick() {
-        // this.setState(state => ({
-        //     isToggleOn: !state.isToggleOn
-        // }));
-        // document.getElementById('profile').classList.toggle('active');
         store.getState().item.id === this.props.item.id ? this.closeItem() : this.openItem() ;
     }
 

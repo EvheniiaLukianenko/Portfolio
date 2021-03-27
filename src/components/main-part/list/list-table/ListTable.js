@@ -6,20 +6,19 @@ import {actions} from "../../../../store/actions/actions";
 export default class ListTable extends Component {
     constructor(props) {
         super(props);
-        store.dispatch({type: actions.FETCH_LIST});
+        store.dispatch({type: actions.FETCH_LIST, payload: {listId: 1, pageNumber: 1}});
     }
-
+    listData;
 
     getListData() {
-        return store.getState().listData;
+        this.listData = store.getState().list;
     }
 
-    listItems = this.getListData().data.map((item, index) =>
-        <ListItem item={item} index={index}  key={item.id}></ListItem>
-    );
-
     render() {
-        
+        this.getListData();
+        let listItems = this.listData.data.map((item, index) =>
+            <ListItem item={item} index={index}  key={item.id}></ListItem>
+        );
         return (
             <table className="table table-light table-striped table-bordered">
                 <thead>
@@ -30,7 +29,7 @@ export default class ListTable extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.listItems}
+                    {listItems}
                 </tbody>
             </table>       
         )
