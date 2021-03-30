@@ -8,8 +8,9 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
     return {
-        listData: state.listData,
+        list: state.list,
         item: state.item,
+        modal: state.modal,
     }
 };
 

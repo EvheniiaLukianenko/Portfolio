@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {store} from "../../index";
+import {actions} from "../../store/actions/actions";
 
 export default class Header extends Component {
     constructor(props) {
@@ -9,7 +11,9 @@ export default class Header extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        document.getElementById('modal').classList.toggle('active');
+        
+        store.dispatch({type: actions.OPEN_MODAL});
+        console.log(store.getState().modal.showModal);
     }
 
     render() {

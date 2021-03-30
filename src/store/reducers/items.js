@@ -13,7 +13,7 @@ function itemsReducer(state = initialState, action) {
         case actions.FETCH_LIST_SUCCESS:
             return {
                 ...initialState,
-                data: action.payload.data
+                ...action.payload,
             };
 
         case actions.FETCH_LIST_ERROR:
