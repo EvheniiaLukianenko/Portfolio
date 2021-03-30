@@ -10,30 +10,12 @@ export default class Pagination extends Component {
             buttons: [1, 2, 3]
         }
         this.handleClick = this.handleClick.bind(this);
-
-        // this.prevPage = this.prevPage.bind(this);
-        // this.nextPage = this.nextPage.bind(this);
     }
     listData;
-    // arrWithPages = [];
 
     getListData() {
         this.listData = store.getState().list;
     }
-
-
-
-    // prevPage = this.state.currPage-1;
-    // nextPage = this.state.currPage+1;
-    
-    
-    // prevPage() {
-    //     this.state.currPage = this.prevPage;
-    // }
-
-    // nextPage() {
-    //     this.state.currPage = this.nextPage;
-    // }
 
     handleClick(number) {
         console.log('this.listData', this.listData);
@@ -54,26 +36,6 @@ export default class Pagination extends Component {
         console.log('arrWithPages', arrWithPages);
         return (
             <div>{buttons}</div>
-        )
-        // if (this.currPage === 1) {
-        //     return ( 
-        //         <div>              
-        //             <button>{this.state.currPage}</button>
-        //             <button onClick={this.nextItem}>{this.nextPage}</button>
-        //             <button>Last</button>
-        //         </div>
-        //     )
-        // } else {
-        //     return ( 
-        //         <div>
-        //             <button>First</button>
-        //             <button>{this.currPage - 1}</button>         
-        //             <button>{this.currPage}</button>
-        //             <button>{this.currPage + 1}</button>
-        //             <button>Last</button>
-        //         </div>
-        //     )
-        // }
-        
+        )        
     }
 }
