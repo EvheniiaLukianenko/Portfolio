@@ -93,7 +93,7 @@ export const FILMS = [
         id: 11,
         title: 'Nowhere Boy',
         description: "A chronicle of John Lennon's first years, focused mainly in his adolescence and his relationship with his stern aunt Mimi, who raised him, and his absentee mother Julia, who re-entered his life at a crucial moment in his young life.",
-        image: 'jognlennon.jpg',
+        image: 'johnlennon.jpg',
         genre: 'Biography, Drama, Music',
         status: 1,
         imdb: 7.1,

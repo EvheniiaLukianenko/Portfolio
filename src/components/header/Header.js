@@ -13,7 +13,7 @@ export default class Header extends Component {
         e.preventDefault();
         
         store.dispatch({type: actions.OPEN_MODAL});
-        console.log(store.getState().modal.showModal);
+        // console.log(store.getState().modal.showModal);
     }
 
     render() {

@@ -23,19 +23,19 @@ function* fetchItem(action) {
     }
 }
 
-// function* openModal() {
-//     yield put({type: actions.OPEN_MODAL});
+// function* removeItem(action) {
+//     try {
+//         yield put({type: actions.REMOVE_ITEM, payload: action.payload});
+//     } catch (e) {
+
+//     }
 // }
 
-// function* closeModal() {
-//     yield put({type: actions.CLOSE_MODAL});
-// }
 
 function* watchItems() {
     yield takeLatest(actions.FETCH_LIST, fetchItems);
     yield takeLatest(actions.FETCH_ITEM, fetchItem);
-    // yield takeLatest(actions.OPEN_MODAL, openModal);
-    // yield takeLatest(actions.CLOSE_MODAL, closeModal);
+    // yield takeLatest(actions.REMOVE_ITEM, removeItem);
 }
 
 export default watchItems;

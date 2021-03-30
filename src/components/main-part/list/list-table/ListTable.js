@@ -16,8 +16,8 @@ export default class ListTable extends Component {
 
     render() {
         this.getListData();
-        let listItems = this.listData.data.map((item, index) =>
-            <ListItem item={item} index={index}  key={item.id}></ListItem>
+        let listItems = this.listData.data.map((item) =>
+            <ListItem item={item} key={item.id}></ListItem>
         );
         return (
             <table className="table table-light table-striped table-bordered">

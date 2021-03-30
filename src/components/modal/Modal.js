@@ -6,7 +6,6 @@ import { actions } from '../../store/actions/actions'
 export default class Modal extends Component {
     constructor(props) {
         super(props);
-        this.showModal = store.getState().modal.showModal;
 
         this.handleClick = this.handleClick.bind(this);
     }
@@ -18,8 +17,9 @@ export default class Modal extends Component {
         store.dispatch({type: actions.CLOSE_MODAL});
     }
         render() {
-            console.log(this.showModal);
-            if(this.showModal){
+            let showModal = store.getState().modal.showModal;
+            console.log(store.getState().modal);
+            if(showModal){
                 return (
                     <div className="modal" id="modal">
                         <div className="modal__window">

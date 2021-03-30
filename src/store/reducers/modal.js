@@ -7,12 +7,12 @@ function modalReducer(state = initialState, action) {
 
         case actions.OPEN_MODAL:
             return {
-                showModal: true
+                ...initialState, showModal: true
             };
 
         case actions.CLOSE_MODAL:
             return {
-                ...initialState,
+                initialState,
             };
 
         default:

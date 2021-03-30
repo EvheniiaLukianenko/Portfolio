@@ -20,6 +20,14 @@ function itemsReducer(state = initialState, action) {
             return {
                 ...initialState,
             };
+
+         case actions.REMOVE_ITEM: {
+            return {
+                ...initialState,
+                data: state.data.filter(i => i.id !== action.payload),
+            };
+        }    
+
         default:
             return state;
     }

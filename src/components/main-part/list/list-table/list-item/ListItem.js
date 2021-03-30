@@ -12,18 +12,16 @@ export default class ListItem extends Component {
     }
     listData;
 
+    getListData() {
+        this.listData = store.getState().list;
+    }
 
     handleClick() {
         store.getState().item.id === this.props.item.id ? this.closeItem() : this.openItem() ;
     }
 
-    
-    getListData() {
-        this.listData = store.getState().list;
-    }
-
     openItem() {
-        console.log('currentListId', this.currentListId);
+        // console.log('currentListId', this.currentListId);
         store.dispatch({type: actions.FETCH_ITEM, payload: {listId: this.listData.listId, itemId: this.props.item.id}});
         // this.props.history.push(`/${2}/notes/${1}`);
     }
@@ -33,13 +31,20 @@ export default class ListItem extends Component {
         // this.props.history.push(`/${2}/notes/${1}`);
     }
 
+    removeItem(itemId) {
+        console.log('item id', this.props.item.id);
+        store.dispatch({type: actions.REMOVE_ITEM, payload: itemId});
+        console.log(this.listData.data);
+    }
+
     render() {
         this.getListData();
         return (
             <tr onClick={this.handleClick} className="list__item">
-                <th scope="row">{this.props.index+1}</th>
+                <th scope="row">{this.props.item.id}</th>
                 <td>{this.props.item.title}</td>
                 <td>{this.props.item.description}</td>
+                <td><button onClick={() => this.removeItem(this.props.item.id)}>Remove</button></td>
             </tr>
         )
     }
