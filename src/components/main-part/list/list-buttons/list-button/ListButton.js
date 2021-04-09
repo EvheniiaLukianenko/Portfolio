@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {store} from "../../../../../index";
 import {actions} from "../../../../../store/actions/actions";
+import {Link} from 'react-router-dom';
 
 export default class ListButton extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ export default class ListButton extends Component {
     render() {
         return (
             <div onClick={this.handleClick}>
+                {/* <Link to={`/${this.props.listData.title}`} className="button button--violet">{this.props.listData.title}</Link> */}
                 <button className="button button--violet">{this.props.listData.title}</button>
             </div>
         )

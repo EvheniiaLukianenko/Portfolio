@@ -16,6 +16,7 @@ export default class Profile extends Component {
 
     render() {
         this.getItem();
+        console.log(this.item);
         this.getListData();
 
         if ( this.listData.listId === 1 && this.item.image) {

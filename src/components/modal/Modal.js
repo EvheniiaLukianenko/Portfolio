@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Contact from '../contact/Contact'
 import { store } from '../..';
-import { actions } from '../../store/actions/actions'
+import { actions } from '../../store/actions/actions';
 
 export default class Modal extends Component {
     constructor(props) {

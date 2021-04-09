@@ -23,7 +23,7 @@ function itemsReducer(state = initialState, action) {
 
          case actions.REMOVE_ITEM: {
             return {
-                ...initialState,
+                ...state,
                 data: state.data.filter(i => i.id !== action.payload),
             };
         }    

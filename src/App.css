@@ -7,10 +7,12 @@
   --white: #fff;
   --violet: #c8defd;
 
-  --ubuntu: 'Ubuntu', sans-serif;
+  --ubuntu: "Ubuntu", sans-serif;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -60,11 +62,11 @@
   font-weight: 700;
   color: var(--white);
 
-  transition: border-color .2s linear,
-              color .2s linear;
+  transition: border-color 0.2s linear, color 0.2s linear;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   text-decoration: none;
   color: inherit;
   border-color: var(--dark);
@@ -75,14 +77,24 @@
   border-color: var(--dark);
   color: var(--dark);
 
-  transition: background-color .2s linear;
+  transition: background-color 0.2s linear;
 }
 
 .button--nobd {
   border: none;
 }
 
-.button--violet:hover {
+.button--small {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 7px;
+  min-width: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.button--violet:hover,
+.button--violet:focus {
   background-color: var(--dark);
   color: var(--violet);
 }
@@ -103,10 +115,20 @@
   border-bottom: 2px solid transparent;
 }
 
-.list__item:hover {
+.list__item:hover,
+.list__item.active {
   cursor: pointer;
   background-color: var(--first) !important;
   border-bottom: 2px solid var(--dark);
+}
+
+.list__item a {
+  color: inherit;
+  font-size: 1.1rem;
+}
+
+.list__item a:hover {
+  text-decoration: none;
 }
 
 /* Profile */
@@ -115,7 +137,7 @@
   border: 3px solid var(--rose);
 }
 
-.profile h2{
+.profile h2 {
   padding: 10px 0;
 }
 
@@ -128,7 +150,6 @@
 
 .profile__info {
   padding: 10px;
-  
 }
 
 .profile__info h5 {
@@ -184,7 +205,7 @@
   color: var(--dark);
   border-bottom: 2px solid var(--second);
 
-  transition: border-color .2s linear;
+  transition: border-color 0.2s linear;
 }
 
 .contact a:hover {
@@ -203,7 +224,7 @@
 
   width: 100vw;
   height: 100vh;
-  background-color: rgba(49, 47, 48, .3);
+  background-color: rgba(49, 47, 48, 0.3);
 }
 
 .modal__window {
@@ -274,7 +295,7 @@ textarea.modal__control {
 .modal__close:before,
 .modal__close:after {
   display: block;
-  content: '';
+  content: "";
 
   position: absolute;
   top: 11px;
@@ -285,7 +306,7 @@ textarea.modal__control {
   height: 3px;
   background-color: var(--dark);
 
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 .modal__close:before {
@@ -296,10 +317,10 @@ textarea.modal__control {
   transform: rotate(-45deg);
 }
 
-.modal__close:hover.modal__close:before{
+.modal__close:hover.modal__close:before {
   transform: rotate(135deg);
 }
 
-.modal__close:hover.modal__close:after{
+.modal__close:hover.modal__close:after {
   transform: rotate(45deg);
 }

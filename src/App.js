@@ -4,6 +4,7 @@ import MainPart from './components/main-part/MainPart';
 import Footer from './components/footer/Footer';
 import Modal from './components/modal/Modal'
 import {connect} from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 const mapStateToProps = (state) => {
@@ -17,10 +18,14 @@ const mapStateToProps = (state) => {
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <MainPart/>
-      <Footer/>
-      <Modal/>
+      <Router>
+          <Route exact path="/">
+            <Header/>
+            <MainPart/>
+            <Footer/>
+            <Modal/>
+          </Route>
+      </Router> 
     </div>
   );
 }
