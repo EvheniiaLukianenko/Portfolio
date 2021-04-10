@@ -1,37 +1,38 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import ListItem from './list-item/ListItem';
 import {store} from "../../../../index";
 import {actions} from "../../../../store/actions/actions";
+import { useParams } from 'react-router-dom';
+import {LISTS} from '../../../../mocks/lists';
 
-export default class ListTable extends Component {
-    constructor(props) {
-        super(props);
-        store.dispatch({type: actions.FETCH_LIST, payload: {listId: 1, pageNumber: 1}});
-    }
-    listData;
+const ListTable = () => {
+    const {category} = useParams();
+    let listData =store.getState().list;
+    let listId = LISTS.filter(i => i.title === category )[0].id;   
 
-    getListData() {
-        this.listData = store.getState().list;
-    }
+    useEffect(() => {
+        store.dispatch({type: actions.FETCH_LIST, payload: {listId: listId, pageNumber: 1}});
+    }, [category]);
 
-    render() {
-        this.getListData();
-        let listItems = this.listData.data.map((item) =>
-            <ListItem item={item} key={item.id}></ListItem>
-        );
-        return (
-            <table className="table table-light table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {listItems}
-                </tbody>
-            </table>       
-        )
-    }
+    let listItems = listData.data.map((item) =>
+        <ListItem item={item} key={item.id}></ListItem>
+    );
+
+    return (
+        <table className="table table-light table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {listItems}
+            </tbody>
+        </table>      
+    )
 }
+
+export default ListTable;
+

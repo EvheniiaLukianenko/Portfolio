@@ -94,7 +94,8 @@
 }
 
 .button--violet:hover,
-.button--violet:focus {
+.button--violet:focus,
+.button--violet.active {
   background-color: var(--dark);
   color: var(--violet);
 }

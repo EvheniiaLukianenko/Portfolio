@@ -4,7 +4,7 @@ import MainPart from './components/main-part/MainPart';
 import Footer from './components/footer/Footer';
 import Modal from './components/modal/Modal'
 import {connect} from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 
 const mapStateToProps = (state) => {
@@ -19,12 +19,15 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Header/>
+        <Switch>
           <Route exact path="/">
-            <Header/>
-            <MainPart/>
-            <Footer/>
-            <Modal/>
+            <Redirect to="/movies"/>
           </Route>
+          <Route path="/:category" children={<MainPart/>}/>
+        </Switch>
+        <Footer/>
+        <Modal/>
       </Router> 
     </div>
   );
