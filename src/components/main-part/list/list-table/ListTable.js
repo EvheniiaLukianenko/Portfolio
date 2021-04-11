@@ -1,42 +1,38 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import ListItem from './list-item/ListItem';
-import getList from '../../../../services/fetch-data';
+import {store} from "../../../../index";
+import {actions} from "../../../../store/actions/actions";
+import { useParams } from 'react-router-dom';
+import {LISTS} from '../../../../mocks/lists';
 
-export default class ListTable extends Component {
-    constructor(props) {
-        super(props);
-        // this.state = {
-        //     data: [{
-        //         title: "Bla"
-        //     }]
-        // };
+const ListTable = () => {
+    const {category} = useParams();
+    let listData =store.getState().list;
+    let listId = LISTS.filter(i => i.title === category )[0]?.id;   
 
-        // this.getListData = this.getListData.bind(this);
-    }
+    useEffect(() => {
+        store.dispatch({type: actions.FETCH_LIST, payload: {listId: listId, pageNumber: 1}});
+    }, [category]);
 
-    // getListData() {
-    //     return getList(1);
-    // }
-
-    listItems = getList(1).map((item, index) =>
-        <ListItem item={item} index={index}></ListItem>
+    let listItems = listData.data.map((item) =>
+        <ListItem item={item} key={item.id}></ListItem>
     );
 
-    render() {
-        
-        return (
-            <table class="table table-light table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.listItems}
-                </tbody>
-            </table>       
-        )
-    }
+    return (
+        <table className="table table-light table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {listItems}
+            </tbody>
+        </table>      
+    )
 }
+
+export default ListTable;
+

@@ -1,29 +1,44 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react';
+import {actions} from "../../../../../store/actions/actions";
+import {store} from "../../../../../index";
+import {Link, Redirect, useRouteMatch} from 'react-router-dom';
 
-export default class ListItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {isToggleOn: true};
+const ListItem = (props) => {
 
-        this.handleClick = this.handleClick.bind(this);
-    }
+    let item = store.getState().item;
+    let match = useRouteMatch();
+    const [toggle, setToggle] = useState(false);
 
-    // Check!!!
-    handleClick(e) {
-        e.preventDefault();
-        this.setState(state => ({
-            isToggleOn: !state.isToggleOn
-        }));
-        document.getElementById('profile').classList.toggle('active');
-    }
+    const handleClick = () =>  {
+        setToggle(!toggle);
+    };
 
-    render() {
-        return (
-            <tr onClick={this.handleClick} className="list__item">
-                <th scope="row">{this.props.index+1}</th>
-                <td>{this.props.item.title}</td>
-                <td>{this.props.item.description}</td>
-            </tr>
-        )
-    }
-}
+    const removeItem = (itemId) =>  {
+        store.dispatch({type: actions.REMOVE_ITEM, payload: itemId});
+    };
+
+    return (
+        <tr className={ item.id === props.item.id && toggle ? "list__item active" : "list__item"}>
+            <th scope="row">{props.item.id}</th>
+            <td>
+                <Link to={
+                    toggle ? `${match.url}` : `${match.url}/${props.item.id}`} 
+                    onClick={handleClick}>{props.item.title}
+                    </Link>
+            </td>
+            <td>
+                <Link to={
+                    toggle ? `${match.url}` : `${match.url}/${props.item.id}`} 
+                    onClick={handleClick}>{props.item.description}
+                    </Link>
+            </td>
+            <td>
+                <Link to={`${match.url}`} onClick={() => removeItem(props.item.id)} className='button button--small button--nobd'>
+                    Remove
+                </Link>          
+            </td>
+        </tr>       
+    )
+};
+
+export default ListItem;

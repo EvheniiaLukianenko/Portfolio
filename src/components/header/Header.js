@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import {store} from "../../index";
+import {actions} from "../../store/actions/actions";
+
 
 export default class Header extends Component {
     constructor(props) {
@@ -9,7 +12,9 @@ export default class Header extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        document.getElementById('modal').classList.toggle('active');
+        
+        store.dispatch({type: actions.OPEN_MODAL});
+        // console.log(store.getState().modal.showModal);
     }
 
     render() {
@@ -21,7 +26,7 @@ export default class Header extends Component {
                             <span>Hello,</span>
                             <h2>I'm Jane!</h2>
                         </div>
-                        <div className="col-3">
+                        <div className="col-3">            
                             <a onClick={this.handleClick} className="button" href="#">Contact Me</a>
                         </div>  
                     </div>
