@@ -22,12 +22,20 @@ const Profile = () => {
 
     useEffect((params) => {
         console.log("effects", id);
-        store.dispatch({type: actions.FETCH_ITEM, payload: {listId: listData.listId, itemId: parseInt(id) }});
+        openItem();
     },[id]);
+
+    // const closeItem = () =>  {
+    //     store.dispatch({type: actions.CLOSE_ITEM});
+    // };
+
+    const openItem = () =>  {
+        store.dispatch({type: actions.FETCH_ITEM, payload: {listId: listData.listId, itemId: parseInt(id) }});
+    };
 
     getItem();
     getListData();
-    
+    console.log("effects", id)
     if ( listData.listId === 1 && item.image) {
             return (
                 <div className="profile" id="profile">

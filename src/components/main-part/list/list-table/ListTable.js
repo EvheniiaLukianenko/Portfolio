@@ -8,7 +8,7 @@ import {LISTS} from '../../../../mocks/lists';
 const ListTable = () => {
     const {category} = useParams();
     let listData =store.getState().list;
-    let listId = LISTS.filter(i => i.title === category )[0].id;   
+    let listId = LISTS.filter(i => i.title === category )[0]?.id;   
 
     useEffect(() => {
         store.dispatch({type: actions.FETCH_LIST, payload: {listId: listId, pageNumber: 1}});

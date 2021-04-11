@@ -116,11 +116,15 @@
   border-bottom: 2px solid transparent;
 }
 
-.list__item:hover,
-.list__item.active {
+.list__item:hover {
   cursor: pointer;
   background-color: var(--first) !important;
   border-bottom: 2px solid var(--dark);
+}
+
+.list__item.active {
+  cursor: pointer;
+  background-color: var(--violet) !important;
 }
 
 .list__item a {
